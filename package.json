@@ -1,0 +1,80 @@
+{
+    "name": "@remotex-labs/xjet-core",
+    "main": "dist/index.js",
+    "type": "module",
+    "types": "./dist/index.d.ts",
+    "module": "./dist/index.js",
+    "author": "Garefild",
+    "version": "1.0.0-local",
+    "license": "Mozilla Public License Version 2.0",
+    "homepage": "https://remotex-labs.github.io/xJet-core/",
+    "description": "Shared kernel for xJet - event protocol, transport contracts",
+    "sideEffects": false,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/remotex-labs/xJet-core.git"
+    },
+    "bugs": {
+        "url": "https://github.com/remotex-labs/xJet-core/issues"
+    },
+    "keywords": [
+        "jet",
+        "xjet",
+        "test",
+        "jest",
+        "mocha",
+        "watch",
+        "testing",
+        "mocking",
+        "jasmine",
+        "coverage",
+        "typescript"
+    ],
+    "engines": {
+        "node": ">=22"
+    },
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        }
+    },
+    "scripts": {
+        "dev":              "xBuild -w",
+        "build":            "xBuild",
+        "build:clean":      "rm -rf ./dist && xBuild",
+
+        "test":             "xjet",
+        "test:coverage":    "xjet --coverage",
+
+        "lint":             "pnpm lint:md && pnpm lint:eslint && pnpm lint:typescript",
+        "lint:md":          "markdownlint \"**/*.md\" --ignore node_modules",
+        "lint:eslint":      "eslint . -c ./eslint.config.mjs",
+        "lint:typescript":  "xBuild --tc",
+
+        "docs:dev":         "vitepress dev docs",
+        "docs:build":       "vitepress build docs",
+        "docs:preview":     "vitepress preview docs"
+    },
+    "devDependencies": {
+        "eslint": "^10.5.0",
+        "vitepress": "^2.0.0-alpha.17",
+        "markdownlint-cli": "^0.49.0",
+        "typescript-eslint": "^8.62.0",
+        "eslint-plugin-tsdoc": "^0.5.2",
+        "eslint-plugin-perfectionist": "^5.9.1",
+        "@types/node": "^26.0.1",
+        "@remotex-labs/xjet": "^1.5.4",
+        "@viteplus/versions": "^2.0.6",
+        "@remotex-labs/xbuild": "^2.5.1"
+    },
+    "dependencies": {
+        "@remotex-labs/xstruct": "^3.0.0",
+        "@remotex-labs/xjet-expect": "^2.1.5"
+    }
+}

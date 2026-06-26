@@ -1,0 +1,63 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "ESNext",
+        "module": "ESNext",
+        "outDir": "dist",
+        "rootDir": "src",
+        "composite": false,
+        "declaration": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "moduleDetection": "force",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "emitDeclarationOnly": true,
+        "lib": [
+            "DOM",
+            "ESNext"
+        ],
+        "types": [
+            "node"
+        ],
+        "paths": {
+            "@mocks/*": [
+                "./src/mocks/*"
+            ],
+            "@errors/*": [
+                "./src/errors/*"
+            ],
+            "@models/*": [
+                "./src/models/*"
+            ],
+            "@services/*": [
+                "./src/services/*"
+            ],
+            "@constants/*": [
+                "./src/constants/*"
+            ],
+            "@directives/*": [
+                "./src/directives/*"
+            ],
+            "@interfaces/*": [
+                "./src/interfaces/*"
+            ],
+            "@components/*": [
+                "./src/components/*"
+            ]
+        }
+    },
+    "include": [
+        "src/index.ts",
+        "includes/*.d.ts"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules",
+        "**/*.spec.ts"
+    ],
+    "references": [
+        { "path": "./tsconfig.spec.json" }
+    ]
+}

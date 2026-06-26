@@ -1,0 +1,9 @@
+/**
+ * Globals
+ */
+
+declare global {
+
+}
+
+export {};
